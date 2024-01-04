@@ -26,13 +26,13 @@ class Solution:
 
         while True:
             if curr: #check if current node has a value
-                stack.append(curr) #store the current root node in a stack
-                res.append(curr.val) #append current root to res
+                stack.append(curr) 
+                res.append(curr.val) #append since root value comes first always
                 curr = curr.left #traverse the left node
 
             elif stack:  #if current node is empty, check stack to see if we traversed any nodes by checking the stack
                 curr = stack.pop() #if true then go back to previous node 
-                curr = curr.right #traverse right side after left (if right side is empty, the current node will traverse back again)
+                curr = curr.right #traverse right side after left (if right side is empty as well, the current node will traverse back again according to the stack)
             else:
                 break
         return res
