@@ -32,7 +32,7 @@ class Solution:
                 curr = stack.pop() #if true then go back to previous node
 
                 res.append(curr.val) 
-                curr = curr.right #traverse right side after left (if right side is empty, the current node will traverse back again)
+                curr = curr.right #traverse right to check for values (if right side is empty, the current node will traverse back again)
             else:
                 break
         return res
