@@ -8,3 +8,5 @@ class Solution:
         
         return goal == 0
 
+    #Time: O(nums)
+    #Space: O(1)
