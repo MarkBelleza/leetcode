@@ -12,10 +12,13 @@ class Solution:
         
         ans = 0
 
-        for i in range(len(s)):
-            if i < (len(s) - 1) and romanNum[s[i]] < romanNum[s[i + 1]]:
-                ans -= romanNum[s[i]]
+        for i, letter in enumerate(s):
+            if i < (len(s) - 1) and romanNum[letter] < romanNum[s[i + 1]]:
+                ans -= romanNum[letter]
             else:
-                ans += romanNum[s[i]]
+                ans += romanNum[letter]
         
         return ans
+
+        #Time: O(n)
+        #Space: O(1)
