@@ -27,5 +27,5 @@ class Solution:
                 
         return res
 
-        # Time: O(n)
-        # Space: O(n)
+        # Time: O(H + k) worst case, you'll have to travel the entire height (since its an inorder traversal, DFS) + k nodes
+        # Space: O(H) worst case where H is the height of the tree
