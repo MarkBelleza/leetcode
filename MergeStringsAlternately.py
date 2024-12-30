@@ -16,3 +16,15 @@ class Solution:
         return ans + word1 + word2
         # Time: O(n)
         # Space: O(n)
+
+        # or
+        
+        # ans = ""
+        # while word1 or word2:
+        #     if word1:
+        #         ans += word1[0]
+        #         word1 = word1[1:]
+        #     if word2:
+        #         ans += word2[0]
+        #         word2 = word2[1:]
+        # return ans
