@@ -17,4 +17,4 @@ class Solution:
         return root
 
         # Time: O(n)
-        # Space: O(n)
+        # Space: O(n) / O(h) (the height of the tree)
