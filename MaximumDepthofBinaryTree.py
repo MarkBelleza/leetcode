@@ -26,4 +26,13 @@ class Solution:
 
     # Time: O(n) where n is the number of nodes
     # Space: O(n) worst case, the queue will hold the widest level of the tree, which would be about n/2
+
+        # DFS(Depth First Search)
+        if not root:
+            return 0
+        
+        return max(self.maxDepth(root.left) + 1, self.maxDepth(root.right) + 1)
+
+        # Time: O(n)
+        # Space: O(h)
         
