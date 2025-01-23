@@ -21,5 +21,8 @@ class Solution:
 
         return f(n)
 
-        # Time: O(n)
+        # Time: O(n) 
         # Space: O(n)
+
+        # Note: Without memoization Time is O(n^2). 
+        # This is because without memoization, the function makes redundant recursive calls for the same inputs. For example, fib(n-1) and fib(n-2) will independently calculate overlapping subproblems.
