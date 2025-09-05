@@ -1,30 +1,30 @@
 class Solution {
     public int evalRPN(String[] tokens) {
-        Stack<Integer> stack = new Stack<Integer>();
-        for (int i = 0; i < tokens.length; i++){
+        Stack<Integer> s = new Stack<>();
 
-            if (tokens[i].equals("+")){ //Note String is an object not a primitive type, hence we need to use .equals()
-                stack.push(stack.pop() + stack.pop());
+        for(String i : tokens){
+            if(i.equals("+")){
+                s.push(s.pop() + s.pop());
             }
-            else if (tokens[i].equals("-")){
-                int num1 = stack.pop();
-                int num2 = stack.pop();
-                stack.push(num2 - num1);
+            else if(i.equals("-")){ //Note String is an object not a primitive type, hence we need to use .equals()
+                int a = s.pop();
+                int b = s.pop();
+                s.push(b - a);
             }
-            else if (tokens[i].equals("*")){
-                stack.push(stack.pop() * stack.pop());
+            else if(i.equals("*")){
+                s.push(s.pop() * s.pop());
             }
-            else if (tokens[i].equals("/")){
-                int num1 = stack.pop();
-                int num2 = stack.pop();
-                stack.push(num2 / num1);
+            else if(i.equals("/")){
+                int a = s.pop();
+                int b = s.pop();
+                s.push(b / a);
             }
             else{
-                stack.push(Integer.valueOf(tokens[i]));
+                s.push(Integer.parseInt(i));
             }
         }
-        return stack.pop();
+        return s.pop();
     }
+    //Time: O(n)
+    //Space: O(n)
 }
-// Time: O(n)
-// Space: O(n)
