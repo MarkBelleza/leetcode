@@ -38,8 +38,18 @@ class Solution {
             len++;
         }
         return len;
-    }
-    // Time: O(n) where n is the number of nodes
-    // Space: O(n) worst case, the queue will hold the widest level of the tree, which would be about n/2
+        // Time: O(n) where n is the number of nodes
+        // Space: O(n) worst case, the queue will hold the widest level of the tree, which would be about n/2
 
+        // or (DFS)
+
+        if(root == null){
+            return 0;
+        }
+
+        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+        //Time: O(n)
+        //Space: O(n)
+        
+    }
 }
