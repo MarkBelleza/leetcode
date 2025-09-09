@@ -49,7 +49,7 @@ class Solution {
 
         return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
         //Time: O(n)
-        //Space: O(n)
+        //Space: O(h) since its dfs, the maximum space stored would be the height of the tree
         
     }
 }
