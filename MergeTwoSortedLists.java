@@ -26,10 +26,8 @@ class Solution {
         
         if(list1 == null){
             dummy.next = list2;
-            list2 = null;
         }else{
             dummy.next = list1;
-            list1 = null;
         }
         return ans.next;
     }
