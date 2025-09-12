@@ -8,23 +8,19 @@ class Solution:
         dummy = ListNode()
         ans = dummy
 
-
-        while list1 or list2:
-            if list1 and list2:
-                if list1.val < list2.val:
-                    dummy.next = ListNode(list1.val, None)
-                    dummy = dummy.next
-                    list1 = list1.next
-                else:
-                    dummy.next = ListNode(list2.val, None)
-                    dummy = dummy.next
-                    list2 = list2.next 
-            elif not list1:
-                dummy.next = list2
-                list2 = None
+        while list1 and list2:
+            if list1.val < list2.val:
+                dummy.next = ListNode(list1.val, None)
+                list1 = list1.next
             else:
-                dummy.next = list1
-                list1 = None
+                dummy.next = ListNode(list2.val, None)
+                list2 = list2.next
+            dummy = dummy.next
+             
+        if not list1:
+            dummy.next = list2
+        else:
+            dummy.next = list1
         
         return ans.next
 
