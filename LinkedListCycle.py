@@ -9,18 +9,13 @@ class Solution:
         turtle = head
         hare = head
 
-        #Tortoise and hare method, if there is a cycle in the in linked list eventually turtle and hare would point in the same node
-
-        while hare and hare.next:
+        while hare and hare.next: #no need to check if turtle is null since hare will always be ahead, thus hare will know if there is an end first
+            hare = hare.next.next
             turtle = turtle.next
-
-            hare = hare.next #the hare moves twice as fast as the turtle
-            hare = hare.next
-          
-            if turtle == hare:
+            if hare == turtle:
                 return True
         
         return False
-
-        #Time: O(n)
-        #Sapce: O(1)
+    
+    # Time: O(N)
+    # Space: O(1)
