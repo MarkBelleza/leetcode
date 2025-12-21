@@ -13,14 +13,15 @@ class Solution:
         
 
         #Or
-        profit = 0
-        buy = prices[0]
+        low = prices[0]
+        max_profit = 0
 
-        for price in prices:
-            if price < buy: #if current price is lower than previous buy, then buy this one
-                buy = price
-            else: #if current price is higher than previous buy, then sell
-                profit = max(price - buy, profit)
-        return profit
+        for p in prices:
+            if low > p:
+                low = p
+
+            max_profit = max(p - low, max_profit)
+    
+        return max_profit
         #Time: O(n)
         #Space: O(1)
