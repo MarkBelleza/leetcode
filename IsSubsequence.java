@@ -21,17 +21,10 @@ class Solution {
             return true;
         }
         return false;
-    }
-}
-// Time: O(t) the length of t, since we assume t may be longer than s in length
-// Space: O(1)
 
-// or
+        // or
 
-class Solution {
-    public boolean isSubsequence(String s, String t) {
         int a = 0;
-
         for (char i: t.toCharArray()){
             if (a == s.length()){
                 return true;
@@ -47,3 +40,6 @@ class Solution {
         return false;
     }
 }
+// Time: O(t) the length of t, since we assume t may be longer than s in length
+// Space: O(1)
+
