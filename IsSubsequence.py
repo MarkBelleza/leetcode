@@ -18,3 +18,18 @@ class Solution:
     
     # Time: O(t) the length of t, since we assume t may be longer than s in length
     # Space: O(1)
+
+    # Or
+
+        a = 0
+        for i in t:
+            if a == len(s):
+                return True
+            elif i == s[a]:
+                a += 1
+        
+        if a == len(s): return True
+        return False
+        
+    # Time: O(N)
+    # Space: O(1)
